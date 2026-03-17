@@ -1,6 +1,4 @@
-/* =========================
-   BASE STYLES
-========================= */
+/* ---------- Base styles ---------- */
 
 * {
     box-sizing: border-box;
@@ -9,15 +7,15 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #e7e7e7;
+    background: #e6e6e6;
     color: #111;
 }
 
 #container {
     max-width: 1080px;
     margin: 0 auto;
-    background: #ffffff;
-    padding: 22px 28px 18px;
+    padding: 20px 28px 18px;
+    background: #fff;
 }
 
 img {
@@ -26,16 +24,17 @@ img {
     height: auto;
 }
 
-p {
-    margin: 0 0 14px;
-    line-height: 1.45;
-    font-size: 0.98rem;
-}
-
 h1,
 h2,
-h3 {
-    margin: 0;
+h3,
+p {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 14px;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 a {
@@ -52,158 +51,141 @@ mark {
     color: inherit;
 }
 
-small {
-    font-size: 0.8em;
-}
-
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ---------- Header ---------- */
 
 header {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 header p {
-    font-size: 0.88rem;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 2px;
     color: #333;
 }
 
 header h1 {
-    font-size: 5.8rem;
-    line-height: 0.92;
-    font-weight: 900;
+    font-size: 5.6rem;
+    line-height: 0.95;
     letter-spacing: -3px;
-    border-top: 1px solid #8f8f8f;
-    padding-top: 2px;
+    font-weight: 900;
+    border-top: 1px solid #8a8a8a;
+    padding-top: 4px;
 }
 
 header h1 em {
-    color: #cc2e2e;
     font-style: normal;
+    color: #cf2f2f;
 }
 
-/* =========================
-   MAIN LAYOUT
-========================= */
+/* ---------- Layout ---------- */
 
 main {
     display: grid;
     grid-template-columns: 290px 1fr;
     grid-template-areas:
-        "aside-top article-top"
-        "aside-bottom article-bottom";
+        "promo story1"
+        "events story2";
     gap: 24px 28px;
     align-items: start;
 }
 
 aside:first-of-type {
-    grid-area: aside-top;
+    grid-area: promo;
 }
 
 aside:last-of-type {
-    grid-area: aside-bottom;
+    grid-area: events;
 }
 
 article:first-of-type {
-    grid-area: article-top;
+    grid-area: story1;
 }
 
 article:last-of-type {
-    grid-area: article-bottom;
+    grid-area: story2;
 }
 
-/* =========================
-   TOP ARTICLE
-========================= */
+/* ---------- First article ---------- */
 
 article:first-of-type {
-    border-left: 1px solid #9d9d9d;
-    padding-left: 28px;
+    border-left: 1px solid #9a9a9a;
+    padding-left: 24px;
     min-height: 220px;
 }
 
 article:first-of-type img {
     width: 240px;
     float: right;
-    margin: -105px 0 12px 18px;
+    margin: -100px 0 14px 18px;
 }
 
 article:first-of-type h2 {
-    color: #c73333;
+    color: #c53333;
     font-size: 3rem;
     font-weight: 500;
-    line-height: 1.02;
+    line-height: 1.05;
     margin-bottom: 10px;
-    max-width: 320px;
+    max-width: 340px;
 }
 
 article:first-of-type p {
     font-size: 0.95rem;
-    line-height: 1.42;
+    line-height: 1.45;
 }
 
-/* =========================
-   BOTTOM ARTICLE
-========================= */
+/* ---------- Second article ---------- */
 
 article:last-of-type img {
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 article:last-of-type h2 {
-    font-size: 4.8rem;
+    font-size: 4.6rem;
     font-weight: 300;
     line-height: 0.95;
     letter-spacing: -2px;
-    margin-bottom: 12px;
-    text-transform: none;
+    margin-bottom: 14px;
 }
 
 article:last-of-type p {
-    font-size: 0.97rem;
-    line-height: 1.42;
+    font-size: 0.98rem;
+    line-height: 1.45;
 }
 
-/* =========================
-   TOP ASIDE
-========================= */
+/* ---------- Left promo block ---------- */
 
 aside:first-of-type {
-    padding: 6px 10px 0 8px;
+    padding: 8px 10px 0 8px;
 }
 
 aside:first-of-type p:first-child {
-    font-size: 1.08rem;
+    font-size: 1.05rem;
     line-height: 1.8;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 aside:first-of-type p:last-child {
     margin-bottom: 0;
 }
 
-aside:first-of-type p:last-child a {
-    font-size: 1.18rem;
-    font-weight: 800;
+aside:first-of-type a {
+    font-size: 1.15rem;
+    font-weight: 700;
 }
 
-/* =========================
-   BOTTOM ASIDE
-========================= */
+/* ---------- Event block ---------- */
 
 aside:last-of-type {
-    background: #f2f2f2;
+    background: #f1f1f1;
     padding: 18px 16px 16px 18px;
     position: relative;
 }
@@ -211,26 +193,26 @@ aside:last-of-type {
 aside:last-of-type::before {
     content: "+";
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 8px;
-    font-size: 4.5rem;
-    font-weight: 300;
+    font-size: 4.3rem;
     line-height: 1;
+    font-weight: 300;
     color: #222;
 }
 
 aside:last-of-type h2 {
-    margin-left: 30px;
-    color: #c73333;
-    font-size: 1.9rem;
+    margin-left: 28px;
+    margin-bottom: 12px;
+    color: #c53333;
+    font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.05;
-    margin-bottom: 10px;
 }
 
 aside:last-of-type > p {
-    font-size: 0.92rem;
-    line-height: 1.42;
+    font-size: 0.95rem;
+    line-height: 1.45;
     margin-bottom: 14px;
 }
 
@@ -243,33 +225,32 @@ aside li:last-child {
 }
 
 aside li h3 {
-    font-size: 0.96rem;
-    line-height: 1.25;
     margin-bottom: 4px;
+    font-size: 1rem;
+    line-height: 1.25;
 }
 
 aside li p {
-    font-size: 0.88rem;
-    line-height: 1.38;
-    margin: 0;
+    margin-bottom: 0;
+    font-size: 0.92rem;
+    line-height: 1.4;
 }
 
 aside li a {
     font-weight: 700;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ---------- Footer ---------- */
 
 footer {
     margin-top: 24px;
-    padding-top: 8px;
+    padding-top: 10px;
+    border-top: 1px solid #bcbcbc;
 }
 
 footer p {
-    margin: 0;
-    font-size: 0.92rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
 }
 
 footer em {
@@ -284,9 +265,17 @@ footer abbr {
     font-weight: 700;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* ---------- Small extra polish ---------- */
+
+article img {
+    transition: transform 0.2s ease;
+}
+
+article img:hover {
+    transform: scale(1.01);
+}
+
+/* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
     #container {
@@ -294,16 +283,17 @@ footer abbr {
     }
 
     header h1 {
-        font-size: 4.5rem;
+        font-size: 4.4rem;
     }
 
     main {
         grid-template-columns: 1fr;
         grid-template-areas:
-            "article-top"
-            "article-bottom"
-            "aside-top"
-            "aside-bottom";
+            "story1"
+            "story2"
+            "promo"
+            "events";
+        gap: 22px;
     }
 
     article:first-of-type {
@@ -313,8 +303,8 @@ footer abbr {
     }
 
     article:first-of-type img {
-        float: right;
         width: 220px;
+        float: right;
         margin: 0 0 12px 18px;
     }
 
@@ -324,28 +314,32 @@ footer abbr {
 }
 
 @media (max-width: 600px) {
+    #container {
+        padding: 16px;
+    }
+
     header h1 {
         font-size: 3.3rem;
         letter-spacing: -2px;
     }
 
     header p {
-        font-size: 0.78rem;
+        font-size: 0.8rem;
     }
 
     article:first-of-type img {
         float: none;
         width: 100%;
-        margin: 0 0 14px 0;
+        margin: 0 0 14px;
     }
 
     article:first-of-type h2 {
-        max-width: none;
         font-size: 2.2rem;
+        max-width: none;
     }
 
     article:last-of-type h2 {
-        font-size: 2.8rem;
+        font-size: 2.9rem;
     }
 
     aside:first-of-type p:first-child {
@@ -354,6 +348,6 @@ footer abbr {
     }
 
     aside:last-of-type h2 {
-        font-size: 1.55rem;
+        font-size: 1.5rem;
     }
 }
