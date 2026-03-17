@@ -2,33 +2,44 @@
    BASE STYLES
 ========================= */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f2f2f2;
+    background: #e7e7e7;
     color: #111;
 }
 
 #container {
-    max-width: 1100px;
+    max-width: 1080px;
     margin: 0 auto;
     background: #ffffff;
-    padding: 30px;
+    padding: 22px 28px 18px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 p {
-    line-height: 1.6;
-    margin: 0 0 15px;
+    margin: 0 0 14px;
+    line-height: 1.45;
+    font-size: 0.98rem;
 }
 
 h1,
 h2,
 h3 {
-    margin: 0 0 10px;
+    margin: 0;
 }
 
 a {
-    color: #222;
+    color: #111;
     text-decoration: none;
 }
 
@@ -38,13 +49,311 @@ a:hover {
 
 mark {
     background: none;
+    color: inherit;
 }
 
 small {
     font-size: 0.8em;
 }
 
-img {
-    max-width: 100%;
-    display: block;
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    margin-bottom: 18px;
+}
+
+header p {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+    color: #333;
+}
+
+header h1 {
+    font-size: 5.8rem;
+    line-height: 0.92;
+    font-weight: 900;
+    letter-spacing: -3px;
+    border-top: 1px solid #8f8f8f;
+    padding-top: 2px;
+}
+
+header h1 em {
+    color: #cc2e2e;
+    font-style: normal;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+main {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    grid-template-areas:
+        "aside-top article-top"
+        "aside-bottom article-bottom";
+    gap: 24px 28px;
+    align-items: start;
+}
+
+aside:first-of-type {
+    grid-area: aside-top;
+}
+
+aside:last-of-type {
+    grid-area: aside-bottom;
+}
+
+article:first-of-type {
+    grid-area: article-top;
+}
+
+article:last-of-type {
+    grid-area: article-bottom;
+}
+
+/* =========================
+   TOP ARTICLE
+========================= */
+
+article:first-of-type {
+    border-left: 1px solid #9d9d9d;
+    padding-left: 28px;
+    min-height: 220px;
+}
+
+article:first-of-type img {
+    width: 240px;
+    float: right;
+    margin: -105px 0 12px 18px;
+}
+
+article:first-of-type h2 {
+    color: #c73333;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.02;
+    margin-bottom: 10px;
+    max-width: 320px;
+}
+
+article:first-of-type p {
+    font-size: 0.95rem;
+    line-height: 1.42;
+}
+
+/* =========================
+   BOTTOM ARTICLE
+========================= */
+
+article:last-of-type img {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+article:last-of-type h2 {
+    font-size: 4.8rem;
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+    text-transform: none;
+}
+
+article:last-of-type p {
+    font-size: 0.97rem;
+    line-height: 1.42;
+}
+
+/* =========================
+   TOP ASIDE
+========================= */
+
+aside:first-of-type {
+    padding: 6px 10px 0 8px;
+}
+
+aside:first-of-type p:first-child {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+aside:first-of-type p:last-child {
+    margin-bottom: 0;
+}
+
+aside:first-of-type p:last-child a {
+    font-size: 1.18rem;
+    font-weight: 800;
+}
+
+/* =========================
+   BOTTOM ASIDE
+========================= */
+
+aside:last-of-type {
+    background: #f2f2f2;
+    padding: 18px 16px 16px 18px;
+    position: relative;
+}
+
+aside:last-of-type::before {
+    content: "+";
+    position: absolute;
+    top: 0;
+    left: 8px;
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: #222;
+}
+
+aside:last-of-type h2 {
+    margin-left: 30px;
+    color: #c73333;
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 10px;
+}
+
+aside:last-of-type > p {
+    font-size: 0.92rem;
+    line-height: 1.42;
+    margin-bottom: 14px;
+}
+
+aside li {
+    margin-bottom: 14px;
+}
+
+aside li:last-child {
+    margin-bottom: 0;
+}
+
+aside li h3 {
+    font-size: 0.96rem;
+    line-height: 1.25;
+    margin-bottom: 4px;
+}
+
+aside li p {
+    font-size: 0.88rem;
+    line-height: 1.38;
+    margin: 0;
+}
+
+aside li a {
+    font-weight: 700;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 24px;
+    padding-top: 8px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.92rem;
+}
+
+footer em {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-right: 6px;
+}
+
+footer abbr {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    #container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 4.5rem;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "article-top"
+            "article-bottom"
+            "aside-top"
+            "aside-bottom";
+    }
+
+    article:first-of-type {
+        border-left: none;
+        padding-left: 0;
+        min-height: auto;
+    }
+
+    article:first-of-type img {
+        float: right;
+        width: 220px;
+        margin: 0 0 12px 18px;
+    }
+
+    article:last-of-type h2 {
+        font-size: 3.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 3.3rem;
+        letter-spacing: -2px;
+    }
+
+    header p {
+        font-size: 0.78rem;
+    }
+
+    article:first-of-type img {
+        float: none;
+        width: 100%;
+        margin: 0 0 14px 0;
+    }
+
+    article:first-of-type h2 {
+        max-width: none;
+        font-size: 2.2rem;
+    }
+
+    article:last-of-type h2 {
+        font-size: 2.8rem;
+    }
+
+    aside:first-of-type p:first-child {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    aside:last-of-type h2 {
+        font-size: 1.55rem;
+    }
 }
